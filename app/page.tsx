@@ -2,13 +2,13 @@
 
 import data from "@/app/data/data.json";
 import tags from "@/app/data/tags.json";
-import Post from "../components/Post";
+import Post from "./components/Post";
 import { useState } from "react";
 export default function Posts() {
   const [selectedTag, setSelectedTag] = useState<string>("");
 
   const filteredData = data.filter((item) =>
-    selectedTag ? item.tags.includes(selectedTag) : true
+    selectedTag ? item.tags.includes(selectedTag) : true,
   );
 
   return (

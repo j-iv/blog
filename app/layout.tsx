@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Posts from "./posts/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,9 +50,11 @@ export default function RootLayout({
               "mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:pl-10"
             }
           >
-            <img
+            <Image
               src="/headshot.jpg"
               alt="profile picture"
+              width={80}
+              height={80}
               className={"rounded-full w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0"}
             />
             <div
@@ -70,9 +72,11 @@ export default function RootLayout({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src="/linkedin-logo.png"
                     alt={"LinkedIn profile link"}
+                    width={20}
+                    height={20}
                     className={"w-5 h-5 flex-shrink-0 hover:opacity-70"}
                   />
                 </a>
@@ -81,10 +85,12 @@ export default function RootLayout({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src="/github-logo.png"
-                    alt={"Github profile link"}
-                    className={"w-5 h-5 flex-shrink-0 hover:opacity-70"}
+                    alt="Github profile link"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5 flex-shrink-0 hover:opacity-70"
                   />
                 </a>
                 <a
@@ -92,16 +98,18 @@ export default function RootLayout({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src="/medium-logo.png"
                     alt={"Medium profile link"}
+                    width={20}
+                    height={20}
                     className={"w-5 h-5 flex-shrink-0 hover:opacity-70"}
                   />
                 </a>
               </div>
             </div>
           </div>
-          <Posts />
+          {children}
         </div>
       </body>
     </html>
